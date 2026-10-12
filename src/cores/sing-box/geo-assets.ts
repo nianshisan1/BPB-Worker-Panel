@@ -78,8 +78,8 @@ export function getGeoAssets(): GeoAsset[] {
             dns: localDNS,
             geosite: 'geosite-cn',
             geoip: 'geoip-cn',
-            geositeURL: 'https://raw.githubusercontent.com/Chocolate4U/Iran-sing-box-rules/rule-set/geosite-cn.srs',
-            geoipURL: 'https://raw.githubusercontent.com/Chocolate4U/Iran-sing-box-rules/rule-set/geoip-cn.srs'
+            geositeURL: 'https://fastly.jsdelivr.net/gh/Chocolate4U/Iran-sing-box-rules@rule-set/geosite-cn.srs',
+            geoipURL: 'https://fastly.jsdelivr.net/gh/Chocolate4U/Iran-sing-box-rules@rule-set/geoip-cn.srs'
         },
         {
             rule: bypassRussia,

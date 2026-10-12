@@ -120,7 +120,7 @@ function addRuleSets(ruleSets: RuleSet[], geoAsset: GeoAsset) {
         tag: geo,
         format: 'binary',
         url,
-        download_detour: 'direct'
+        download_detour: '✅ Selector'
     });
 
     if (geosite && geositeURL) addRuleSet(geosite, geositeURL);

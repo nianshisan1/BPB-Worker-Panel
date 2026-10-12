@@ -85,8 +85,8 @@ export function getGeoAssets(): GeoAsset[] {
             format: 'yaml',
             geosite: 'cn',
             geoip: 'cn-cidr',
-            geositeURL: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.yaml',
-            geoipURL: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.yaml'
+            geositeURL: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.yaml',
+            geoipURL: 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/cn.yaml'
         },
         {
             rule: bypassRussia,

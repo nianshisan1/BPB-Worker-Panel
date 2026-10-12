@@ -25,6 +25,8 @@ export function buildRoutingRules(isWarp: boolean) {
         ...routingRules.bypass.domains.map(domain => `DOMAIN-SUFFIX,${domain},DIRECT`),
         ...routingRules.bypass.geoips.map(geoip => `RULE-SET,${geoip},DIRECT`),
         ...routingRules.bypass.ips.map(ip => buildIpCidrRule(ip, 'DIRECT')),
+        'GEOSITE,cn,DIRECT',
+        'GEOIP,CN,DIRECT',
         'MATCH,✅ Selector'
     ];
 }

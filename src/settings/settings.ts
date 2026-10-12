@@ -24,7 +24,7 @@ Object.assign(globalThis, {
     _repo_: atob('aHR0cHM6Ly9naXRodWIuY29tL2JpYS1wYWluLWJhY2hlL0JQQi1Xb3JrZXItUGFuZWw='),
     _wizard_repo_: atob('aHR0cHM6Ly9naXRodWIuY29tL2JpYS1wYWluLWJhY2hlL0JQQi1XaXphcmQ='),
     _website_: atob('aHR0cHM6Ly9iaWEtcGFpbi1iYWNoZS5naXRodWIuaW8vQlBCLVdvcmtlci1QYW5lbC8='),
-    _public_proxy_ip_: atob('YnBiLnlvdXNlZi5pc2VnYXJvLmNvbQ=='),
+    _public_proxy_ip_: 'cdn-all.xn--b6gac.eu.org',
 });
 
 export function init(request: Request, env: Env) {
@@ -41,7 +41,12 @@ export function init(request: Request, env: Env) {
         trPass: EMBEDED_SETTINGS.trPass,
         securePath: EMBEDED_SETTINGS.securePath,
         proxyIpMode: EMBEDED_SETTINGS.proxyIpMode,
-        proxyIPs: EMBEDED_SETTINGS.proxyIPs.length ? EMBEDED_SETTINGS.proxyIPs : [_public_proxy_ip_],
+        proxyIPs: EMBEDED_SETTINGS.proxyIPs.length ? EMBEDED_SETTINGS.proxyIPs : [
+            'cdn-all.xn--b6gac.eu.org',
+            'edgetunnel.cmliu.net',
+            'proxyip.fxxk.dedyn.io',
+            'proxyip.aliyun.fxxk.dedyn.io'
+        ],
         prefixes: EMBEDED_SETTINGS.prefixes.length ? EMBEDED_SETTINGS.prefixes : [
             '[2a02:898:146:64::]',
             '[2602:fc59:b0:64::]',
@@ -183,19 +188,19 @@ export const clients: Client[] = [
 ];
 
 let kvSettings: KvSettings = {
-    localDNS: '8.8.8.8',
+    localDNS: '223.5.5.5',
     antiSanctionDNS: '178.22.122.100',
-    fakeDNS: false,
+    fakeDNS: true,
     enableIPv6: false,
-    allowLANConnection: false,
+    allowLANConnection: true,
     logLevel: 'warning',
     customDomain: '',
     protocols: `${_VL_},${_TR_}`,
-    remoteDNS: 'https://8.8.8.8/dns-query',
+    remoteDNS: 'https://1.1.1.1/dns-query',
     remoteDnsHost: {
         isDomain: false,
-        host: '8.8.8.8',
-        ipv4: [],
+        host: '1.1.1.1',
+        ipv4: ['1.1.1.1', '1.0.0.1'],
         ipv6: []
     },
     upstreamProxy: '',
@@ -205,7 +210,13 @@ let kvSettings: KvSettings = {
     },
     chainProxy: '',
     chainProxyParams: {},
-    cleanIPs: ['www.speedtest.net'],
+    cleanIPs: [
+        'time.is',
+        'visa.com.hk',
+        'cloudflare.cfgo.cc',
+        'ip.164746.xyz',
+        'cf.090227.xyz'
+    ],
     ports: [443],
     fingerprint: 'chrome',
     bestPingInterval: 30,
@@ -246,7 +257,7 @@ let kvSettings: KvSettings = {
     amneziaNoiseSizeMin: 50,
     amneziaNoiseSizeMax: 100,
     bypassIran: false,
-    bypassChina: false,
+    bypassChina: true,
     bypassRussia: false,
     bypassOpenAi: false,
     bypassGoogleAi: false,
